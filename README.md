@@ -1,4 +1,28 @@
-# KMZ Theory
+KMZ Theory
+
+## Introduction
+The King Maximum Zero (KMZ) Theory is a novel theoretical framework for understanding dynamic @
+
+## Core Principles
+1. **Maximum Zero (MZ)**: Represents the ultimate equilibrium point where positive and negativ@
+2. **Dual Toroidal Fields**: Two toroidal fields representing the positive radiational (electr@
+3. **KMZ-E (Electro Pulse Radiation)**: Represents the positive radiational forces, measured i@
+4. **KMZ-M (Magnetic Snapback)**: Represents the negative magnetic forces, measured in anti-he@
+
+## Mathematical Framework
+
+### Equilibrium Equation
+\[ 0 = E_{rad} + (-B_{mag}) \]
+
+### Energy Generation (Fusion)
+\[ E_{fusion} = \Delta m \cdot k_{base61} \]
+
+### Magnetic Field Strength
+\[ B_{mag} = \frac{\Phi}{A} \]
+
+### Radiational Force
+\[ F_{rad} = \frac{E_{fusion}}{r} \]
+                                                                              13/1635C# KMZ Theory
 
 ## Introduction
 The King Maximum Zero (KMZ) Theory is a novel theoretical framework for understanding dynamic processes at both atomic and cosmic scales. This repository contains the core principles, mathematical frameworks, and potential applications of KMZ theory.
