@@ -1,0 +1,52 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Constants
+H_BAR = 1.0545718e-34  # Planck's constant (J·s)
+C = 3e8  # Speed of light (m/s)
+G = 6.67430e-11  # Gravitational constant (m^3 kg^-1 s^-2)
+F0 = 1e14  # Fundamental frequency (Hz)
+N_HARMONICS = 61
+
+# Generate B61 harmonic frequencies
+harmonics = np.array([n * F0 for n in range(1, N_HARMONICS + 1)])
+b61_harmonic = np.array([n / np.sqrt(2 * np.pi) for n in range(1, N_HARMONICS + 1)])
+
+def harmonic_sum_mz(amplitudes, wave_numbers, angular_frequencies, b61, position, time, static):
+    """
+    Calculate the harmonic sum for the given parameters including the fourth state position (static).
+
+    Parameters:
+    - amplitudes: Amplitudes of the harmonic components.
+    - wave_numbers: Wave numbers of the harmonic components.
+    - angular_frequencies: Angular frequencies of the harmonic components.
+    - b61: B61 harmonic frequencies.
+    - position: Spatial positions.
+    - time: Temporal positions.
+    - static: Fourth state positions (static equilibrium).
+
+    Returns:
+    - Harmonic sum as an array of the same length as `position`.
+    """
+    return np.sum([amplitudes[i] * np.cos(wave_numbers[i] * position - angular_frequencies[i] * time + static[i]) for i in range(len(amplitudes))], axis=0)
+
+# Define amplitudes, wave numbers, and angular frequencies for the harmonic sum
+amplitudes = np.random.rand(N_HARMONICS)  # Random amplitudes for testing
+wave_numbers = 2 * np.pi * harmonics / C  # Wave numbers
+angular_frequencies = 2 * np.pi * harmonics  # Angular frequencies
+
+# Define time, position, and static equilibrium for testing
+position = np.linspace(0, 10, 1000)
+time = np.linspace(0, 1, 1000)
+static = np.random.rand(N_HARMONICS)  # Static equilibrium positions for testing
+
+# Calculate harmonic sum for the given parameters
+psi_mz = harmonic_sum_mz(amplitudes, wave_numbers, angular_frequencies, b61_harmonic, position, time, static)
+
+# Plot the results
+plt.figure(figsize=(12, 6))
+plt.plot(position, psi_mz)
+plt.title('Harmonic Interactions in KMZ Theory with Fourth State Position')
+plt.xlabel('Position (m)')
+plt.ylabel('Harmonic Sum')
+plt.show()
